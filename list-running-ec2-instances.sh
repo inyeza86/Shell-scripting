@@ -1,5 +1,16 @@
 #!/bin/bash
-
+# This script lists all running EC2 instances in the AWS account
+# and their associated tags. It uses the AWS CLI to retrieve the
+# information and displays the results in a tabular format.
+# Usage: ./list-running-instances.sh
+# Prerequisites:
+# - AWS CLI installed and configured with appropriate credentials
+# - jq installed (for JSON parsing)
+# - Bash shell
+# - set -x (for debugging)
+# - set -e (for error handling)
+set -e
+set -x
 # Ensure AWS CLI is installed and configured with appropriate credentials
 if ! command -v aws &>/dev/null; then
     echo "AWS CLI is not installed. Please install it first."
