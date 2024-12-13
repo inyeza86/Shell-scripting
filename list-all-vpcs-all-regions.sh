@@ -41,3 +41,8 @@ else
     echo "Usage: $0 <region1> <region2> ..."
     echo "Please pass the regions as arguments."
 fi
+
+# aws sts get-caller-identity:Validates that the AWS CLI is configured and can authenticate.If authentication fails, it suggests running aws configure and exits.
+# command -v aws: Checks if the aws command is available on the system.
+# !: Negates the result. If aws is not found, this condition is true.
+# &> /dev/null: Redirects both stdout and stderr to /dev/null, suppressing any output from the command check. If the AWS CLI is not installed, it prints an error message and exits with a non-zero status (exit 1).
