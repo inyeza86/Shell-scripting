@@ -1,0 +1,14 @@
+df -h | awk '!/tmpfs/'
+ubuntu@ip-172-31-21-116:~$ df -h | awk '!/tmpfs/'| awk  -F " " '{print $1,$5,$6}'
+Filesystem Use% Mounted
+/dev/root 29% /
+/dev/xvda16 10% /boot
+/dev/xvda15 6% /boot/efi
+ubuntu@ip-172-31-21-116:~$ 
+
+ubuntu@ip-172-31-21-116:~$ df -h | awk '!/tmpfs/'| cut -d '' -f 1,5
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/root       6.8G  1.9G  4.9G  29% /
+/dev/xvda16     881M   76M  744M  10% /boot
+/dev/xvda15     105M  6.1M   99M   6% /boot/efi
+ubuntu@ip-172-31-21-116:~$ 
